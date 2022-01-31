@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { auth, signInWithEmailAndPassword, signInWithGoogle } from "../firebase/index.js";
+import { auth, logInWithEmailAndPassword, signInWithGoogle } from "../firebase/index.js";
 import { useAuthState } from "react-firebase-hooks/auth";
 import "./login.css";
 
@@ -16,11 +16,21 @@ function Login() {
     }
     if (user) navigate("/dashboard");
   }, [user, loading, navigate]);
+
+  const onFormSubmit = (e) => {
+    e.preventDefault();
+    if(password.length < 5){
+      alert("Password Must be atleast 5 characters long");
+      return
+    }
+    logInWithEmailAndPassword(email, password);
+  }
   return (
-    <div className="login">
+    <form className="login" onSubmit={onFormSubmit}>
       <div className="login__container">
         <input
-          type="text"
+          type="email"
+          required
           className="login__textBox"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
@@ -28,6 +38,7 @@ function Login() {
         />
         <input
           type="password"
+          required
           className="login__textBox"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
@@ -35,7 +46,7 @@ function Login() {
         />
         <button
           className="login__btn"
-          onClick={() => signInWithEmailAndPassword(email, password)}
+          type="submit"
         >
           Login
         </button>
@@ -49,7 +60,7 @@ function Login() {
           Don't have an account? <Link to="/register">Register</Link> now.
         </div>
       </div>
-    </div>
+    </form>
   );
 }
 export default Login;

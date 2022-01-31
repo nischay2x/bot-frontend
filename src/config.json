@@ -1,3 +1,4 @@
 {
-    "imgBase" : "https://ik.imagekit.io/foodbychoice/bot"
+    "imgBase" : "https://ik.imagekit.io/foodbychoice/bot",
+    "defaultUserImage" : "https://ik.imagekit.io/foodbychoice/bot/avatar_default.png"
 }

@@ -18,6 +18,12 @@ header nav .nav-item a.nav-link:hover{
     color: #ff6838 !important;
 }
 
+header .header-profile-img{
+    max-width: 3rem;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
 
 /* Extra small devices (portrait phones, less than 576px) */
 @media (max-width: 575.98px) {
@@ -36,7 +42,7 @@ header nav .nav-item a.nav-link:hover{
 
  /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) and (max-width: 1199.98px) {
-
+    
 }
 
  /* Extra large devices (large desktops, 1200px and up) */
@@ -52,5 +58,8 @@ header nav .nav-item a.nav-link:hover{
 @media (min-width: 992px){
     .no-big{
         display: none;
+    }
+    .navbar-nav.justify-content-around{
+        align-items: center;
     }
 }

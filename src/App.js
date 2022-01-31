@@ -6,17 +6,19 @@ import Header from './components/Header';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import Reset from './pages/Reset';
+import Dashboard from './pages/Dashboard';
 
 function App() {
   return ( 
     <>
-      <Header/>
       <BrowserRouter>
+      <Header/>
         <Routes>
           <Route path="/" element={<Home/>} />
           <Route exact path="/login" element={<Login/>} />
           <Route exact path="/register" element={<Register/>} />
           <Route exact path="/password-reset" element={<Reset/>} />
+          <Route exact path="/dashboard" element={<Dashboard/>} />
         </Routes>
       </BrowserRouter>
     </>

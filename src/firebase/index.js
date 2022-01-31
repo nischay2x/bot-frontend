@@ -2,7 +2,7 @@ import firebaseConfig from "./config.js";
 
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
-
+import { getStorage } from "firebase/storage";
 import {
     GoogleAuthProvider, getAuth, signInWithPopup,
     signInWithEmailAndPassword, createUserWithEmailAndPassword,
@@ -16,6 +16,7 @@ import {
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore(app);
+const storage = getStorage(app);
 const analytics = getAnalytics(app);
 
 const googleProvider = new GoogleAuthProvider();
@@ -28,6 +29,7 @@ const signInWithGoogle = async () => {
         if(docs.docs.length === 0){
             await addDoc(collection(db, "users"), {
                 uid : user.uid,
+                profile : user.photoURL,
                 name : user.displayName,
                 authProvider : "google",
                 email : user.email
@@ -42,6 +44,7 @@ const signInWithGoogle = async () => {
 const logInWithEmailAndPassword = async (email, password) => {
     try {
         await signInWithEmailAndPassword(auth, email, password);
+        console.log("Signed In");
     } catch (error) {
         console.log(error);
         alert(error.message);
@@ -78,6 +81,6 @@ const logout = () => {
 }
 
 export {
-    auth, db, signInWithGoogle, logInWithEmailAndPassword, signInWithEmailAndPassword,
+    auth, db, storage, signInWithGoogle, logInWithEmailAndPassword,
     registerWithEmailAndPassword, sendPasswordReset, logout, sendPasswordResetEmail
 }
