@@ -49,7 +49,7 @@ export default function Header() {
                                 <>
                                     <Link to="/login" className="nav-link">Login</Link>
                                     <span className='text-white'>/</span>
-                                    <Link to="/signup" className="nav-link">Sign Up</Link> 
+                                    <Link to="/register" className="nav-link">Sign Up</Link> 
                                 </>
                                 )
                             }

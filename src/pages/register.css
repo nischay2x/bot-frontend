@@ -4,30 +4,24 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    background-image: url('https://ik.imagekit.io/foodbychoice/bot/enfield_1280.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
   }
   .register__container {
     display: flex;
     flex-direction: column;
     text-align: center;
-    background-color: #dcdcdc;
+    background: rgb(255, 255, 255, 0.3);
+    backdrop-filter: blur(3px);
+    border: 1px solid white;
     padding: 30px;
   }
   .register__textBox {
-    padding: 10px;
-    font-size: 18px;
     margin-bottom: 10px;
   }
-  .register__btn {
-    padding: 10px;
-    font-size: 18px;
-    margin-bottom: 10px;
-    border: none;
-    color: white;
-    background-color: black;
-  }
-  .register__google {
-    background-color: #4285f4;
-  }
+  
   .register div {
     margin-top: 7px;
   }

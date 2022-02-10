@@ -90,11 +90,11 @@ function Dashboard() {
   const onSignUpload = () => {
     if(!signFile) alert("No File Choosen");
     if(!signFile.type.startsWith("image")) alert("Not a valid Image Type");
-    const fileRef = ref(storage, `signatures/sign-${personal?.uid}`);
+    const fileRef = ref(storage, `signatures/sign-${userData?.uid}`);
     uploadBytes(fileRef, signFile).then(() => {
       alert("Signature image Uploaded");
       getDownloadURL(fileRef).then((url) => {
-        updateSignUrlOnFirestore(url, personal?.uid);
+        updateSignUrlOnFirestore(url, docId);
       });
     }).catch(err => {
       console.log(err);
@@ -126,7 +126,7 @@ function Dashboard() {
   const onDataSave = async () => {
     try {
       const data = { personal, relative, address };
-      await updateDoc(doc(db, 'users', personal?.uid), data);
+      await updateDoc(doc(db, 'users', docId), data);
       alert("Data Updated Succesfully");
       setEditable(prev => !prev);
     } catch (error) {
@@ -136,23 +136,6 @@ function Dashboard() {
   }
 
 
-  const fetchUserData = async () => {
-    try {
-      const q = query(collection(db, "users"), where("uid", "==", user?.uid));
-      const doc = await getDocs(q);
-      const data = doc.docs[0].data();
-      console.log(data.uuid);
-      setAddress(data.address);
-      setPersonal(data.personal);
-      setRelative(data.relative);
-      setSignUrl(data.signature ? data.signature : fakeUserData.signature);
-      setUserData(data);
-    } catch (err) {
-      console.error(err);
-      alert("An error occured while fetching user data");
-    }
-  };
-
   useEffect(() => {
     if (loading) return;
     if (!user) return navigate("/login");
@@ -161,11 +144,16 @@ function Dashboard() {
       const data = d.docs[0].data();
       const docId = d.docs[0].id;
       setDocId(docId);
+      setUserData(data);
+      setAddress(data.address);
+      setPersonal(data.personal);
+      setRelative(data.relative);
+      setSignUrl(data.signature ? data.signature : fakeUserData.signature);
     }).catch((err) => {
       console.log(err);
       alert("An Error Occured While Fetching Data");
     })
-  }, [user, loading, navigate, setDocId]);
+  }, [user, loading, navigate, setDocId, setUserData, setAddress, setAddress, setRelative, setSignUrl]);
 
   return (
     <main className="dashboard-main">
@@ -180,6 +168,10 @@ function Dashboard() {
             <div className="col-8 col-sm-6 text-right">
               <h4>{userData.name}</h4>
               <p>{userData.email}</p>
+              <button className="btn btn-danger" onClick={logout}>
+                <i className="fas fa-sign-out"></i>
+                LOGOUT
+              </button>
             </div>
           </div>
           <br />
@@ -217,7 +209,7 @@ function Dashboard() {
                     type="text" 
                     className="form-control" 
                     name="name" 
-                    value={personal?.name} 
+                    value={userData?.name} 
                     placeholder="Your Name will appear here."
                     disabled
                   />
@@ -386,6 +378,10 @@ function Dashboard() {
                   </div>
               </div>
             </div>
+            <div className="d-flex py-2 justify-content-center">
+              <button className="btn btn-warning">
+                <i className="fa fa-phone-alt mr-1"></i> Book Now</button>
+            </div>
           </div>
         </div>
       </div>
@@ -394,9 +390,9 @@ function Dashboard() {
 }
 export default Dashboard;
 
-async function updateSignUrlOnFirestore(url, uid){
+async function updateSignUrlOnFirestore(url, docid){
   try {
-    await setDoc(doc(db, 'users', uid), {
+    await updateDoc(doc(db, 'users', docid), {
       signature : url
     })
   } catch (error) {

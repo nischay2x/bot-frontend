@@ -23,36 +23,46 @@ function Register() {
       <div className="register__container">
         <input
           type="text"
-          className="register__textBox"
+          className="register__textBox form-control"
           value={name}
           onChange={(e) => setName(e.target.value)}
           placeholder="Full Name"
         />
         <input
           type="text"
-          className="register__textBox"
+          className="register__textBox form-control"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           placeholder="E-mail Address"
         />
         <input
           type="password"
-          className="register__textBox"
+          className="register__textBox form-control"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           placeholder="Password"
         />
-        <button className="register__btn" onClick={register}>
+        <button className="btn btn-dark my-1" onClick={register}>
           Register
         </button>
         <button
-          className="register__btn register__google"
+          className="btn btn-primary my-1"
           onClick={signInWithGoogle}
         >
           Register with Google
         </button>
         <div>
-          Already have an account? <Link to="/">Login</Link> now.
+          <span className="text-white">
+            Already have an account ?  
+          </span>
+          <Link to="/">
+            <span className="text-warning">
+              Login
+            </span>
+          </Link> 
+          <span className="text-white">
+            now.
+          </span>
         </div>
       </div>
     </div>
