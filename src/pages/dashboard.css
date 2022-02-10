@@ -1,5 +1,6 @@
 main.dashboard-main {
     height: 100vh;
+    overflow-y: scroll;
     width: 100vw;
     padding-top: 7rem;
     background-image: url('https://ik.imagekit.io/foodbychoice/bot/dashboard_1280.jpg');
@@ -10,7 +11,29 @@ main.dashboard-main {
 
 main.dashboard-main .wrapper{
   background: rgba(0, 0, 0, 0.4);
-  height: calc(100% - 7rem);
+  min-height: 100%;
+  height: fit-content;
+}
+
+main.dashboard-main .user-info{
+  border: 1px solid white;
+  box-shadow: 0 0 10px white;
+}
+
+main.dashboard-main .update-form{
+  background: var(--primary);
+}
+
+main.dashboard-main .text-small{
+  font-size: 1.4rem;
+}
+
+main.dashboard-main hr{
+  background: #329afc;
+}
+
+main.dashboard-main .wrapper input.form-control{
+  margin-bottom: 1rem;
 }
 
 .dashboard-main .user-img-hold{
@@ -22,23 +45,9 @@ main.dashboard-main .wrapper{
 
 main.dashboard-main .user-info{
   background: rgba(255, 255, 255, 0.4);
+  color: white;
 }
 
-  .dashboard__container {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    background-color: #dcdcdc;
-    padding: 30px;
-  }
-  .dashboard__btn {
-    padding: 10px;
-    font-size: 18px;
-    margin-top: 10px;
-    border: none;
-    color: white;
-    background-color: black;
-  }
-  .dashboard div {
-    margin-top: 7px;
-  }
+main.dashboard-main div.sign-hold{
+  width: 7rem;
+}

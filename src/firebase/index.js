@@ -2,7 +2,7 @@ import firebaseConfig from "./config.js";
 
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
-import { getStorage } from "firebase/storage";
+import { getStorage, ref } from "firebase/storage";
 import {
     GoogleAuthProvider, getAuth, signInWithPopup,
     signInWithEmailAndPassword, createUserWithEmailAndPassword,

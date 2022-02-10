@@ -1,4 +1,5 @@
 {
     "imgBase" : "https://ik.imagekit.io/foodbychoice/bot",
-    "defaultUserImage" : "https://ik.imagekit.io/foodbychoice/bot/avatar_default.png"
+    "defaultUserImage" : "https://ik.imagekit.io/foodbychoice/bot/avatar_default.png",
+    "defaultUserSignature" : ""
 }

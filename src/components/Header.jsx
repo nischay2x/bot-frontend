@@ -10,31 +10,7 @@ import "./header.css";
 
 export default function Header() {
 
-    const [user, loading, error] = useAuthState(auth);
-    const dispatch = useDispatch();
-    const [name, setName] = useState("");
-    const [image, setImage] = useState("");
-    const navigate = useNavigate();
-
-    const fetchUserName = async () => {
-        try {
-          const q = query(collection(db, "users"), where("uid", "==", user?.uid));
-          const doc = await getDocs(q);
-          const data = doc.docs[0].data();
-          setName(data.name);
-          const profileImage = data.profile ? data.profile : CONFIG.defaultUserImage;
-          setImage(profileImage);
-        } catch (err) {
-          console.error(err);
-          alert("An error occured while fetching user data");
-        }
-      };
-      useEffect(() => {
-        if (loading) return;
-        if (!user) return navigate("/");
-        fetchUserName();
-      }, [user, loading]);
-    
+    const [user, loading, error] = useAuthState(auth);    
 
     return (
         <header>
@@ -66,10 +42,8 @@ export default function Header() {
                         <li className="nav-item d-flex align-items-center">
                             {
                                 user ? (
-                                    <Link to="/dashboard" className='nav-link d-flex align-items-center'>
-                                        <span className='header-profile-img'>
-                                            <img src={image} alt="Profile Picture" width="100%"/>
-                                        </span>
+                                    <Link to="/dashboard" className='nav-link'>
+                                        Account
                                     </Link> 
                                 ) : (
                                 <>

@@ -34,6 +34,9 @@ section.hero{
     .hero-text{
         font-size: 3rem !important;
     }
+    .no-small{
+        display: none;
+    }
 }
 
  /* Small devices (landscape phones, 576px and up) */
