@@ -1,5 +1,23 @@
 {
     "imgBase" : "https://ik.imagekit.io/foodbychoice/bot",
     "defaultUserImage" : "https://ik.imagekit.io/foodbychoice/bot/avatar_default.png",
-    "defaultUserSignature" : ""
+    "defaultUserSignature" : "",
+    "faqs" : [
+        {
+            "question" : "Which safety accessories will be provided?",
+            "answer" : "Helmet will be provided complimentary along with the bikes, in case, you need more helmet you can rent it from us."
+        },
+        {
+            "question" : "What are the documents needed for booking?",
+            "answer" : "Aadhaar Card and driving licence."
+        },
+        {
+            "question" : "Who can rent a bike from be on time?",
+            "answer" : "Any individual having a valid driving licence for driving in India."
+        }, 
+        {
+            "question" : "What are the insurance policy and fine?",
+            "answer" : "In any case of damage the rider will be responsible for it and the penalties will be charged from the deposited money and also any fine penalties owning to wrongful parking Signal Jumping will be the responsibility of the Rider."   
+        }
+    ]
 }

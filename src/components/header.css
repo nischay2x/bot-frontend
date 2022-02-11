@@ -24,6 +24,10 @@ header .header-profile-img{
     border-radius: 50%;
 }
 
+header div.overlay{
+    height: 70vh;
+    background-color: transparent;
+}
 
 /* Extra small devices (portrait phones, less than 576px) */
 @media (max-width: 575.98px) {

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import CONFIG from "../config.json";
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useDispatch } from 'react-redux';
@@ -10,7 +10,22 @@ import "./header.css";
 
 export default function Header() {
 
-    const [user, loading, error] = useAuthState(auth);    
+    const [user, loading, error] = useAuthState(auth);
+    const [overlay, setOverlay] = useState(false); 
+    const navRef = useRef();   
+    const toggleRef = useRef();
+    const onToggleClick = () => {
+        const navbar = navRef.current;
+        if(navbar.classList.contains('show')){
+            setOverlay(false)
+        } else {
+            setOverlay(true)
+        }
+    }
+
+    const closeNavbar = () => {
+        toggleRef.current.click()
+    }
 
     return (
         <header>
@@ -18,12 +33,12 @@ export default function Header() {
                 <a href="/some" className="navbar-brand no-big" style={{ maxWidth : "5rem" }}>
                     <img src="./images/bot_main_180.png" alt="bot_main" width="100%" />
                 </a>
-                <button className="navbar-toggler text-white" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                <button ref={toggleRef} onClick={onToggleClick} className="navbar-toggler text-white" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                     aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <i className="fa fa-bars"></i>
                 </button>
 
-                <div className="collapse navbar-collapse" id="navbarSupportedContent">
+                <div ref={navRef} className="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul className="navbar-nav justify-content-around w-100">
                         <li className="nav-item">
                             <Link to="/" className="nav-link">Home</Link>
@@ -48,7 +63,7 @@ export default function Header() {
                                 ) : (
                                 <>
                                     <Link to="/login" className="nav-link">Login</Link>
-                                    <span className='text-white'>/</span>
+                                    <span className='text-white mx-1'>/</span>
                                     <Link to="/register" className="nav-link">Sign Up</Link> 
                                 </>
                                 )
@@ -57,6 +72,12 @@ export default function Header() {
                     </ul>
                 </div>
             </nav>
+            {
+                overlay && (
+                    <div className="overlay" onClick={closeNavbar}>
+                    </div>
+                )
+            }
         </header>
     )
 }
