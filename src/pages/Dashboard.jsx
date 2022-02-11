@@ -162,14 +162,13 @@ function Dashboard() {
           <div className="d-flex justify-content-between">
             <div className="col-4">
               <div className="user-img-hold">
-                <img src={userData.profile} alt="Profile Picture" width="100%" />
+                <img src={userData.profile ? userData.profile : CONFIG.defaultUserImage} alt="Profile Picture" width="100%" />
               </div>
             </div>
             <div className="col-8 col-sm-6 text-right">
               <h4>{userData.name}</h4>
               <p>{userData.email}</p>
               <button className="btn btn-danger" onClick={logout}>
-                <i className="fas fa-sign-out"></i>
                 LOGOUT
               </button>
             </div>

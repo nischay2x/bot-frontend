@@ -1,17 +1,19 @@
-section.hero{
-    background-color: var(--primary);
-}
-
-#hero-carousel .carousel-item{
+main.home-main #hero-carousel .carousel-item{
     height: 100vh;
     width: 100%;
     background-position: center;
     background-size: cover;
 }
 
-#hero-carousel .carousel-item .w-100.h-100{
+main.home-main #hero-carousel .carousel-item .w-100.h-100{
     background: rgba(0, 0, 0, 0.3);
     backdrop-filter: blur(2px);
+}
+
+main.home-main{
+    position: relative;
+    width: 100%;
+    height: 100vh;
 }
 
 .hero-text{
@@ -19,6 +21,26 @@ section.hero{
     font-weight: 600;
     text-shadow: 10px 10px 20px var(--primary);
 }
+
+
+main.home-main section.wrapper{
+    background: var(--primary);
+    padding-top: 3rem;
+}
+
+main.home-main section.wrapper .container{
+    /* background: rgba(255, 255, 255, 0.3);
+    border: 0.5px solid white;
+    backdrop-filter: blur(2px); */
+    color: white;
+}
+
+main.home-main .text-big{
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+
 
 /* Extra small devices (portrait phones, less than 576px) */
 @media (max-width: 575.98px) {
