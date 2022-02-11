@@ -82,11 +82,12 @@ export default function Home() {
                         <h2>Why Us ?</h2>
                         <br />
                     </div>
-                    <div id="carouselExampleIndicators" className="carousel slide" data-ride="carousel" data-pause="false" data-interval="4000">
+                    <div id="why-us-carousel" className="carousel slide" data-ride="carousel" data-pause="false" data-interval="4000">
                         <ol className="carousel-indicators">
-                            <li data-target="#carouselExampleIndicators" data-slide-to="0" className="active"></li>
-                            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                            <li data-target="#why-us-carousel" data-slide-to="0" className="active"></li>
+                            <li data-target="#why-us-carousel" data-slide-to="1"></li>
+                            <li data-target="#why-us-carousel" data-slide-to="2"></li>
+                            <li data-target="#why-us-carousel" data-slide-to="3"></li>
                         </ol>
                         <div className="carousel-inner">
                             <div className="carousel-item active">
@@ -126,13 +127,11 @@ export default function Home() {
                                 </div>
                             </div>
                         </div>
-                        <a className="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                            <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span className="sr-only">Previous</span>
+                        <a className="carousel-control-prev no-mid" href="#why-us-carousel" role="button" data-slide="prev">
+                            <i className="fas fa-lg fa-angle-left"></i>
                         </a>
-                        <a className="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                            <span className="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span className="sr-only">Next</span>
+                        <a className="carousel-control-next no-mid" href="#why-us-carousel" role="button" data-slide="next">
+                            <i className="fas fa-lg fa-angle-right"></i>
                         </a>
                     </div>
                 </div>

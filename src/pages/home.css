@@ -21,7 +21,6 @@ main.home-main{
     text-shadow: 10px 10px 20px var(--primary);
 }
 
-
 main.home-main section.wrapper{
     background: linear-gradient(180deg, var(--primary), #fff, #fff);
     padding-top: 2rem;
@@ -47,10 +46,34 @@ main.home-main div.why-hold .carousel-item .card-body{
     border: 3px dashed var(--primary);
 }
 
+main.home-main div.why-hold a.carousel-control-prev{
+    left: -5rem;
+    color: var(--primary);
+}
+main.home-main div.why-hold a.carousel-control-next{
+    right: -5rem;   
+    color: var(--primary);
+}
+#why-us-carousel a.carousel-control-next:hover,
+#why-us-carousel a.carousel-control-prev:hover{
+    color: #000;
+}
+
+
+#why-us-carousel ol.carousel-indicators{
+    bottom: -3rem;
+}
+#why-us-carousel ol.carousel-indicators li{
+    /* background: #000; */
+    height: 1px !important;
+    /* border-radius: 50%; */
+}
+
 main.home-main #faq-accordion {
     padding-top: 1rem;
     padding-bottom: 1rem;
 }
+
 
 main.home-main #faq-accordion .question{
     width: 100%;

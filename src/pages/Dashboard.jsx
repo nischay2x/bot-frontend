@@ -378,8 +378,9 @@ function Dashboard() {
               </div>
             </div>
             <div className="d-flex py-2 justify-content-center">
-              <button className="btn btn-warning">
-                <i className="fa fa-phone-alt mr-1"></i> Book Now</button>
+              <a href="tel:+918461095556" className="btn btn-warning">
+                <i className="fa fa-phone-alt mr-1"></i> Book Now
+              </a>
             </div>
           </div>
         </div>

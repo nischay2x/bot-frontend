@@ -1,12 +1,17 @@
 main.dashboard-main {
     height: 100vh;
     overflow-y: scroll;
-    width: 100vw;
+    overflow-x: hidden;
+    width: 100%;
     padding-top: 7rem;
     background-image: url('https://ik.imagekit.io/foodbychoice/bot/dashboard_1280.jpg');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
+}
+
+main.dashboard-main::-webkit-scrollbar{
+  display: none;
 }
 
 main.dashboard-main .wrapper{

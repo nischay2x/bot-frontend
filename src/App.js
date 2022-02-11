@@ -7,6 +7,7 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 import Reset from './pages/Reset';
 import Dashboard from './pages/Dashboard';
+import Footer from './components/Footer';
 
 function App() {
   return ( 
@@ -20,6 +21,7 @@ function App() {
           <Route exact path="/password-reset" element={<Reset/>} />
           <Route exact path="/dashboard" element={<Dashboard/>} />
         </Routes>
+      <Footer/>
       </BrowserRouter>
     </>
   );
