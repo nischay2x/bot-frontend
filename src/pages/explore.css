@@ -1,0 +1,13 @@
+main.explore-main{
+    min-height: 100vh;
+    width: 100%;
+    background: linear-gradient(to bottom right, var(--primary), white);
+}
+
+main.explore-main > div.container{
+    padding-top: 9rem;
+}
+
+main.explore-main div.bikes-container{
+    min-height: 60vh;
+}

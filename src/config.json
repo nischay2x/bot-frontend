@@ -19,5 +19,55 @@
             "question" : "What are the insurance policy and fine?",
             "answer" : "In any case of damage the rider will be responsible for it and the penalties will be charged from the deposited money and also any fine penalties owning to wrongful parking Signal Jumping will be the responsibility of the Rider."   
         }
+    ],
+    "bikes" : [
+        {
+            "brand" : "Honda",
+            "model" : "Activa 5G",
+            "image" : "https://5.imimg.com/data5/QY/XA/GLADMIN-65464790/honda-activa-5g-scooter-500x500.png",
+            "rent" : 20,
+            "availble" : true,
+            "booking" : {
+                "from" : "",
+                "to" : ""
+            },
+            "type" : "S"
+        },
+        {
+            "brand" : "Hero",
+            "model" : "Duet",
+            "image" : "https://5.imimg.com/data5/QY/XA/GLADMIN-65464790/honda-activa-5g-scooter-500x500.png",
+            "rent" : 20,
+            "availble" : false,
+            "booking" : {
+                "from" : "2022-02-16T11:43:11.133Z",
+                "to" : "2022-02-16T13:43:11.133Z"
+            },
+            "type" : "B"
+        },
+        {
+            "brand" : "TVS",
+            "model" : "Jupiter",
+            "image" : "https://5.imimg.com/data5/QY/XA/GLADMIN-65464790/honda-activa-5g-scooter-500x500.png",
+            "rent" : 20,
+            "availble" : true,
+            "booking" : {
+                "from" : "",
+                "to" : ""
+            },
+            "type" : "B"
+        },
+        {
+            "brand" : "Apprila",
+            "model" : "150 R",
+            "image" : "https://5.imimg.com/data5/QY/XA/GLADMIN-65464790/honda-activa-5g-scooter-500x500.png",
+            "rent" : 20,
+            "availble" : false,
+            "booking" : {
+                "from" : "2022-02-16T15:43:11.133Z",
+                "to" : "2022-02-16T18:43:11.133Z"
+            },
+            "type" : "S"
+        }
     ]
 }

@@ -8,6 +8,7 @@ import Register from './pages/Register';
 import Reset from './pages/Reset';
 import Dashboard from './pages/Dashboard';
 import Footer from './components/Footer';
+import Explore from './pages/Explore';
 
 function App() {
   return ( 
@@ -20,6 +21,7 @@ function App() {
           <Route exact path="/register" element={<Register/>} />
           <Route exact path="/password-reset" element={<Reset/>} />
           <Route exact path="/dashboard" element={<Dashboard/>} />
+          <Route exat path="/explore" element={<Explore/>} />
         </Routes>
       <Footer/>
       </BrowserRouter>
